@@ -4,10 +4,13 @@
   "homepage": "",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --mode development --inline --progress",
-    "build": "webpack --mode production",
+    "_start": "webpack-dev-server --mode development --inline --progress",
+    "_build": "webpack --mode production",
     "dev": "webpack-dev-server",
-    "production": "webpack --mode production"
+    "_production": "webpack --mode production",
+    "production": "export SET NODE_OPTIONS=--openssl-legacy-provider && webpack --mode production",
+    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && webpack --mode production",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && webpack --mode production"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
